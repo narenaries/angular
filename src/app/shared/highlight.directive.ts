@@ -8,7 +8,7 @@ export class HighlightDirective implements OnInit{
     @Input()
     color: string = "red";
     ngOnInit(): void {
-        this.setColor(this.color);
+        //this.setColor(this.color);
     }
     //Dependency injection
     constructor(private element:ElementRef,
@@ -21,7 +21,7 @@ export class HighlightDirective implements OnInit{
 
     @HostListener("mouseleave")
     onMouserLeave(){
-        this.setColor("yellow");
+        this.setColor("");
     }
     setColor(bgColor:string){
         this.renderer.setElementStyle(this.element.nativeElement, "background", bgColor);

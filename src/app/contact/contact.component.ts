@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { LikeService } from "../shared/like.service";
+import { LikeService, Message } from "../shared/like.service";
 
 @Component({
   selector: 'contact',
@@ -14,12 +14,18 @@ export class ContactComponent implements OnInit {
   @ViewChild("para1")
   para1 : ElementRef;
 
-  constructor(private likeServices:LikeService) {
+  constructor(private likeService:LikeService) {
     console.log("contact component is created");
    }
 
   ngOnInit() {
     this.para1.nativeElement.textContent ="From TS File";
+
+    this.likeService.likeSubject
+    .subscribe ((message: Message) => {
+      this.contactLikes = message.likes;
+      console.log("contact subs called");
+    })
   }
 
 }

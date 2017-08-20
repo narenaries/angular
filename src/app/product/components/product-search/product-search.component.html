@@ -1,0 +1,29 @@
+<h2>Product Search</h2>
+
+<form [formGroup]="form" >
+  
+      <label>Search </label>
+      <input type="text" 
+              formControlName="searchTextControl"
+                />
+ 
+</form>
+       
+<div *ngIf="products.length > 0; else noRecords">
+<table >
+  <tr>
+      <th>Product</th>
+      
+  </tr>
+  <tr *ngFor="let p of  products">
+      <td>
+          {{p.name}}
+      </td>
+  </tr>
+</table>
+
+</div>
+
+<ng-template #noRecords>
+   <span label="error"> No Records found </span>
+</ng-template>

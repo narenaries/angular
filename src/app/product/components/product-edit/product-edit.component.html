@@ -1,0 +1,64 @@
+<h2>Edit - {{product.name}}</h2>
+
+<form (ngSubmit)="saveProduct()"
+      #productForm="ngForm"
+     >
+ 
+  <pre >
+       {{productName.errors  | json}}
+
+   </pre>
+  
+  <p *ngIf="productForm.invalid">
+    Form is invalid
+  </p>
+
+
+  <p *ngIf="productForm.dirty">
+    Form is changed
+  </p>
+
+
+
+  Name 
+  <input name="name" 
+         [(ngModel)]="product.name"
+
+         required
+         minlength="5"
+
+         #productName="ngModel"
+
+  />
+
+  <p *ngIf="productName.invalid">
+    Name is invalid
+  </p>
+
+
+  <p *ngIf="productName.dirty">
+    Name is changed
+  </p>
+
+
+  <p *ngIf="productName.errors?.minlength">
+      Min {{productName.errors?.minlength.requiredLength}} letters needed
+  </p>
+
+
+  <p *ngIf="productName.errors?.required">
+      Name is required
+  </p>
+
+
+  Year 
+  <input name="year" 
+         [(ngModel)]="product.year"
+
+         pattern="[0-9]{4}"
+
+  />
+
+  <button type="submit" [disabled]="productForm.invalid" >Save</button>
+
+</form>
