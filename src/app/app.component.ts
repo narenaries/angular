@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+@Component ({
+    selector: 'product-app', //html tag
+    templateUrl: 'app.component.html' //view
 })
-export class AppComponent {
-  title = 'app';
+export class AppComponent implements OnInit{
+    title:string = "Product App";
+    //view is not created during costructer call
+    constructor(){
+
+    }
+    // called after the view is hosted in browser
+    ngOnInit(){
+
+    }
 }
