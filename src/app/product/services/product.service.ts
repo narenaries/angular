@@ -6,6 +6,7 @@ import { environment } from "../../../environments/environment";
 import{Http, Headers, Response, RequestOptions} from "@angular/http";
 
 import "rxjs/add/operator/map";
+import { HttpClient } from "../../auth/auth.http-client";
 
 @Injectable()
 export abstract class ProductService {
@@ -19,7 +20,7 @@ export abstract class ProductService {
 @Injectable()
 export class ProductWebService extends ProductService {
   
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
     super();
     console.log("Prduct service created");
   }

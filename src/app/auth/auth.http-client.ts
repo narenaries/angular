@@ -20,7 +20,7 @@ export class HttpClient {
 
     if (this.authService.isAuthenticated()) {
        let token = this.authService.getToken();
-       options.headers.append('Authorization', 'Bearer ' + token);
+       options.headers.append('Authorization', 'JWT ' + token);
     }
   }
  

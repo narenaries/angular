@@ -15,7 +15,7 @@ export class ProductEditComponent implements OnInit {
 
   constructor(private productService:ProductService, private route:ActivatedRoute,
               private router: Router) { 
-
+               // throw new Error("Crash...");
   }
 
   ngOnInit() {

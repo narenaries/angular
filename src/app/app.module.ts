@@ -13,6 +13,7 @@ import { routes } from './app.routing';
 import { environment } from "../environments/environment";
 import {LocationStrategy, HashLocationStrategy, PathLocationStrategy} from "@angular/common";
 import { AuthModule } from "./auth/auth.module";
+import { ErrorModule } from "./error/error.module";
 
 console.log("Environment: ", environment);
 
@@ -23,8 +24,8 @@ console.log("Environment: ", environment);
         BrowserModule,
         SharedModule,
         RouterModule.forRoot(routes),
-        AuthModule
-        //ProductModule
+        AuthModule,
+        ErrorModule
     ],
 
     declarations: [
@@ -47,7 +48,7 @@ console.log("Environment: ", environment);
         },
         {
             provide: "apiEndPoint",
-            useValue: environment.apiEndPoint
+            useValue: "http://localhost:7070"
         }
     ]
 })

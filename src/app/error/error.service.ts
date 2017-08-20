@@ -39,14 +39,14 @@ export class ApplicationErrorHandlerService implements ErrorHandler {
         let jsonDataText = JSON.stringify(data);
          
         //POST /crash/logs
-        this.http.post(this.apiEndPoint + "/crash/logs",
+       /*  this.http.post(this.apiEndPoint + "/crash/logs",
             jsonDataText,
             requestOptions
         )
         .map( (response : Response ) => response.json())
         .subscribe ( () => {
             console.log("posted error logs to api");
-        })
+        }) */
     
 
             window.sessionStorage.setItem("error.message", error.message);

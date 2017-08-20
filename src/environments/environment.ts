@@ -7,5 +7,5 @@ import { Environment } from "./config";
 
 export const environment: Environment = {
   production: false,
-  apiEndPoint: "http://localhost:7070"
+  apiEndPoint: "http://localhost:7070/secured"
 };
